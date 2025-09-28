@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INGENIOM – Ingenieurbüro für digitale Prozess- & Effizienzlösungen</title>
+  <meta name="description" content="Ingenieurbüro an der Schnittstelle von Informatik & Wirtschaftsingenieurwesen: Prozessoptimierung, Automatisierung, Daten & KI, Schulungen." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN for quick prototype -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--brand:#0ea5e9;--ink:#0f172a}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    .glass{backdrop-filter:saturate(160%) blur(8px); background: rgba(255,255,255,.65)}
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Top Bar -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 glass">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#home" class="flex items-center gap-2">
+          <div class="h-9 w-9 rounded-2xl bg-sky-500/90 shadow-inner"></div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900">INGENIOM</span>
+        </a>
+        <nav class="hidden gap-6 text-sm font-medium md:flex">
+          <a href="#leistungen" class="hover:text-sky-600">Leistungen</a>
+          <a href="#branchen" class="hover:text-sky-600">Branchen</a>
+          <a href="#prozess" class="hover:text-sky-600">Vorgehen</a>
+          <a href="#pakete" class="hover:text-sky-600">Pakete</a>
+          <a href="#kontakt" class="hover:text-sky-600">Kontakt</a>
+        </nav>
+        <div class="hidden md:block">
+          <a href="#kontakt" class="rounded-2xl bg-sky-600 px-4 py-2 text-white shadow hover:bg-sky-700">Kostenloses Erstgespräch</a>
+        </div>
+        <button class="md:hidden" aria-label="Menü öffnen" onclick="document.getElementById('mnav').classList.toggle('hidden')">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+        </button>
+      </div>
+      <div id="mnav" class="hidden border-t border-slate-200 py-3 md:hidden">
+        <div class="flex flex-col gap-3 text-sm">
+          <a href="#leistungen" class="hover:text-sky-600">Leistungen</a>
+          <a href="#branchen" class="hover:text-sky-600">Branchen</a>
+          <a href="#prozess" class="hover:text-sky-600">Vorgehen</a>
+          <a href="#pakete" class="hover:text-sky-600">Pakete</a>
+          <a href="#kontakt" class="hover:text-sky-600">Kontakt</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden bg-white">
+    <div class="absolute inset-0 -z-10">
+      <svg aria-hidden="true" class="h-full w-full opacity-30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+        <defs>
+          <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#bae6fd"/>
+            <stop offset="100%" stop-color="#e0f2fe"/>
+          </linearGradient>
+        </defs>
+        <rect width="800" height="400" fill="url(#g)"/>
+      </svg>
+    </div>
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
+      <div class="grid items-center gap-10 lg:grid-cols-2">
+        <div>
+          <h1 class="text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl">Ingenieurbüro für <span class="text-sky-600">digitale Prozesse</span> & Effizienz</h1>
+          <p class="mt-4 text-lg text-slate-700">Wir verbinden Informatik und Wirtschaftsingenieurwesen: Prozessaufnahme, Automatisierung, Daten & KI – messbar, pragmatisch, umsetzungsstark.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#kontakt" class="w-full sm:w-auto rounded-2xl bg-sky-600 px-5 py-3 text-center text-white shadow hover:bg-sky-700">Erstgespräch buchen</a>
+            <a href="#leistungen" class="w-full sm:w-auto rounded-2xl border border-slate-300 px-5 py-3 text-center text-slate-800 hover:border-slate-400">Leistungen ansehen</a>
+          </div>
+          <ul class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-600">
+            <li>✓ Fokus KMU & Mittelstand</li>
+            <li>✓ Umsetzungsstarkes Duo: IT + Wirtschaft</li>
+            <li>✓ Transparentes Pricing</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="mb-4 text-base font-semibold text-slate-800">Kennzahlen, die zählen</h3>
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl bg-slate-50 p-4 text-center">
+              <div class="text-3xl font-extrabold text-slate-900">15–30%</div>
+              <div class="text-xs text-slate-500">Prozesszeit reduziert*</div>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-4 text-center">
+              <div class="text-3xl font-extrabold text-slate-900">3–8x</div>
+              <div class="text-xs text-slate-500">ROI durch Automatisierung*</div>
+            </div>
+            <div class="rounded-2xl bg-slate-50 p-4 text-center">
+              <div class="text-3xl font-extrabold text-slate-900">< 12 Mon.</div>
+              <div class="text-xs text-slate-500">Amortisationszeit*</div>
+            </div>
+          </div>
+          <p class="mt-2 text-xs text-slate-500">*Richtwerte aus vergleichbaren Projekten; tatsächliche Werte projektspezifisch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leistungen -->
+  <section id="leistungen" class="bg-slate-50 py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900">Leistungen</h2>
+        <p class="mt-2 text-slate-600">Von der Analyse bis zur Umsetzung – modular buchbar oder als Paket.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Prozess- & Effizienzberatung</h3>
+          <p class="mt-2 text-sm text-slate-600">Ist-Aufnahme, Wertstrom-/Prozessanalyse, Bottlenecks, KPIs, Priorisierung & Roadmap.</p>
+          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-600">
+            <li>Workshops & Interviews</li>
+            <li>Wirtschaftlichkeits- & Risikoanalyse</li>
+            <li>Quick-Wins & Umsetzungsplan</li>
+          </ul>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Automatisierung & KI</h3>
+          <p class="mt-2 text-sm text-slate-600">RPA, Skripting (Python), Low-Code, KI-gestützte Assistenten, Dokumentenprozesse.</p>
+          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-600">
+            <li>Workflow-Design & Orchestrierung</li>
+            <li>Schnittstellen & Datenintegration</li>
+            <li>Monitoring & Governance</li>
+          </ul>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Daten & BI</h3>
+          <p class="mt-2 text-sm text-slate-600">Dashboards (Power BI), DWH-Konzepte, Datenqualität, Reporting-Automation.</p>
+          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-600">
+            <li>KPI-Definition</li>
+            <li>Datenmodellierung</li>
+            <li>Self-Service-Analytics</li>
+          </ul>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Technische Beratung</h3>
+          <p class="mt-2 text-sm text-slate-600">Make-or-Buy, Investitionsrechnungen, Anforderungsmanagement, Lieferantenauswahl.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Schulungen & Enablement</h3>
+          <p class="mt-2 text-sm text-slate-600">Prozessmanagement, Lean, Power BI, Automatisierung – vor Ort & remote.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <h3 class="text-lg font-semibold text-slate-900">Servicepakete</h3>
+          <p class="mt-2 text-sm text-slate-600">Laufende Begleitung inkl. Support, Reviews, Verbesserungs-Backlog.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branchen -->
+  <section id="branchen" class="bg-white py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900">Branchenfokus</h2>
+        <p class="mt-2 text-slate-600">Wir arbeiten besonders gerne mit KMU in folgenden Bereichen:</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 class="font-semibold">Fertigung & Maschinenbau</h3>
+          <p class="mt-1 text-sm text-slate-600">Shopfloor- und Backoffice-Prozesse, Stücklisten, Angebot→Auftrag→Lieferung.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 class="font-semibold">Logistik & Handel</h3>
+          <p class="mt-1 text-sm text-slate-600">Bestands- & Auftragsmanagement, Pick-Pack-Ship, EDI, Retouren.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+          <h3 class="font-semibold">Dienstleistung & Verwaltung</h3>
+          <p class="mt-1 text-sm text-slate-600">Dokumentenflüsse, Freigaben, Wissensmanagement, Controlling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vorgehen -->
+  <section id="prozess" class="bg-slate-50 py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900">So arbeiten wir</h2>
+        <p class="mt-2 text-slate-600">Klarer Ablauf, transparente Ergebnisse.</p>
+      </div>
+      <ol class="grid gap-6 md:grid-cols-4">
+        <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <p class="text-xs uppercase tracking-wide text-slate-500">1 · Verstehen</p>
+          <h3 class="mt-1 font-semibold text-slate-900">Ist-Aufnahme</h3>
+          <p class="mt-2 text-sm text-slate-600">Prozesse, KPIs, Systeme, Ziele. Gemeinsame Definition der Prioritäten.</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <p class="text-xs uppercase tracking-wide text-slate-500">2 · Entwerfen</p>
+          <h3 class="mt-1 font-semibold text-slate-900">Lösungsdesign</h3>
+          <p class="mt-2 text-sm text-slate-600">Quick-Wins & Roadmap. Wirtschaftlichkeitsrechnung & Risiken.</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <p class="text-xs uppercase tracking-wide text-slate-500">3 · Umsetzen</p>
+          <h3 class="mt-1 font-semibold text-slate-900">Implementierung</h3>
+          <p class="mt-2 text-sm text-slate-600">Automatisierung, Datenintegration, Dashboards, Schulungen.</p>
+        </li>
+        <li class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <p class="text-xs uppercase tracking-wide text-slate-500">4 · Verbessern</p>
+          <h3 class="mt-1 font-semibold text-slate-900">Monitoring</h3>
+          <p class="mt-2 text-sm text-slate-600">KPIs tracken, kontinuierlich optimieren, Skalierung planen.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Pakete -->
+  <section id="pakete" class="bg-white py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900">Transparente Pakete</h2>
+        <p class="mt-2 text-slate-600">Wählt flexibel – monatlich kündbar oder als Festpreisprojekt.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <p class="text-sm font-semibold text-sky-600">Basic</p>
+          <h3 class="mt-1 text-2xl font-extrabold text-slate-900">1.000 € / Monat</h3>
+          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-600">
+            <li>Monatliches Review (2h)</li>
+            <li>KPI-Reporting</li>
+            <li>Prioritäten-Backlog</li>
+          </ul>
+          <a href="#kontakt" class="mt-4 inline-block rounded-2xl border border-slate-300 px-4 py-2 text-slate-800 hover:border-slate-400">Anfragen</a>
+        </div>
+        <div class="rounded-2xl border-2 border-sky-500 bg-white p-5 shadow-sm sm:p-6">
+          <p class="text-sm font-semibold text-sky-600">Advanced</p>
+          <h3 class="mt-1 text-2xl font-extrabold text-slate-900">3.000 € / Monat</h3>
+          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-600">
+            <li>Laufende Optimierung</li>
+            <li>Automatisierungen (klein)</li>
+            <li>Monatliche Workshops (4h)</li>
+          </ul>
+          <a href="#kontakt" class="mt-4 inline-block rounded-2xl bg-sky-600 px-4 py-2 text-white hover:bg-sky-700">Anfragen</a>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <p class="text-sm font-semibold text-sky-600">Enterprise</p>
+          <h3 class="mt-1 text-2xl font-extrabold text-slate-900">ab 5.000 € / Monat</h3>
+          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-600">
+            <li>Individuelle Roadmap</li>
+            <li>Implementierung & Enablement</li>
+            <li>Vor-Ort-Begleitung</li>
+          </ul>
+          <a href="#kontakt" class="mt-4 inline-block rounded-2xl border border-slate-300 px-4 py-2 text-slate-800 hover:border-slate-400">Anfragen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="bg-slate-50 py-12 lg:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-8 max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-slate-900">Kontakt & Erstgespräch</h2>
+        <p class="mt-2 text-slate-600">Schickt uns kurz euer Anliegen – wir melden uns innerhalb von 24h.</p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-2">
+        <form class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6" onsubmit="event.preventDefault(); alert('Danke! Wir melden uns zeitnah.');">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <label class="block text-sm">
+              <span class="text-slate-700">Name</span>
+              <input required type="text" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-500" />
+            </label>
+            <label class="block text-sm">
+              <span class="text-slate-700">E-Mail</span>
+              <input required type="email" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-500" />
+            </label>
+          </div>
+          <label class="mt-4 block text-sm">
+            <span class="text-slate-700">Nachricht</span>
+            <textarea rows="5" class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-500" placeholder="Kurzbeschreibung: Branche, Ziel, Herausforderungen..."></textarea>
+          </label>
+          <button class="mt-4 w-full rounded-2xl bg-sky-600 px-5 py-3 font-medium text-white hover:bg-sky-700">Absenden</button>
+          <p class="mt-2 text-xs text-slate-500">Oder direkt per Mail: <a class="underline hover:text-sky-700" href="mailto:kontakt@ingeniom.de">kontakt@ingeniom.de</a></p>
+        </form>
+        <div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+            <h3 class="text-lg font-semibold text-slate-900">Unternehmensdaten</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-700">
+              <li><strong>Firma:</strong> INGENIOM (Platzhalter)</li>
+              <li><strong>Sitz:</strong> [Ort, Bundesland]</li>
+              <li><strong>Telefon:</strong> <a class="underline" href="tel:+491234567890">+49 123 4567890</a></li>
+              <li><strong>USt-IdNr.:</strong> [eintragen]</li>
+            </ul>
+            <div class="mt-4 rounded-xl bg-slate-50 p-4 text-sm text-slate-600">
+              <p><span class="font-semibold">Hinweis:</span> Ersetzt Platzhalter durch eure echten Angaben. Auf Wunsch kann das Formular an ein Backend (z. B. Formspree, Supabase, AWS) angebunden werden.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
+        <p class="text-sm text-slate-600">© <span id="y"></span> INGENIOM – Ingenieurbüro für digitale Prozess- & Effizienzlösungen</p>
+        <nav class="flex gap-4 text-sm">
+          <a href="#impressum" class="hover:text-sky-600">Impressum</a>
+          <a href="#datenschutz" class="hover:text-sky-600">Datenschutz</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Impressum & Datenschutz (einfaches Platzhalter-Modal) -->
+  <section id="impressum" class="mx-auto max-w-4xl px-4 py-12">
+    <h2 class="text-2xl font-bold text-slate-900">Impressum (Platzhalter)</h2>
+    <p class="mt-2 text-sm text-slate-600">Angaben gemäß § 5 TMG · Verantwortlich: [Name], [Adresse], [Kontakt]</p>
+  </section>
+  <section id="datenschutz" class="mx-auto max-w-4xl px-4 pb-16">
+    <h2 class="text-2xl font-bold text-slate-900">Datenschutzerklärung (Platzhalter)</h2>
+    <p class="mt-2 text-sm text-slate-600">Hinweise zur Verarbeitung personenbezogener Daten. Ergänzt eure tatsächlichen Richtlinien.</p>
+  </section>
+
+  <!-- Cookie Hinweis (einfach) -->
+  <div id="cookie" class="fixed inset-x-4 bottom-4 z-50 hidden rounded-2xl border border-slate-200 bg-white p-4 shadow-lg md:inset-x-auto md:right-6 md:w-[420px]">
+    <p class="text-sm text-slate-700">Wir verwenden Cookies für grundlegende Funktionen. <a href="#datenschutz" class="underline">Mehr erfahren</a>.</p>
+    <div class="mt-3 flex justify-end gap-2">
+      <button class="rounded-xl border border-slate-300 px-3 py-1 text-sm" onclick="hideCookie()">Ablehnen</button>
+      <button class="rounded-xl bg-sky-600 px-3 py-1 text-sm text-white" onclick="hideCookie()">Akzeptieren</button>
+    </div>
+  </div>
+
+  <script>
+    // Jahreszahl & Cookie Banner
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const COOKIE_KEY = 'ingeniom_cookie_ok';
+    function hideCookie(){
+      document.getElementById('cookie').classList.add('hidden');
+      localStorage.setItem(COOKIE_KEY, '1');
+    }
+    if(!localStorage.getItem(COOKIE_KEY)){
+      setTimeout(()=>document.getElementById('cookie').classList.remove('hidden'), 600);
+    }
+  </script>
+</body>
+</html>
